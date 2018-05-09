@@ -41,3 +41,30 @@ function LetterChanges(str) {
          
 }
 ```
+
+### Capitalize the first letter in every word
+```
+function LetterCapitalize(str) { 
+    let strArr = [...str];
+    let capArr = [];
+    let capNext = false;
+    for (let i=0;i<strArr.length;i++){
+        if (i===0){
+            capArr.push(strArr[i].toUpperCase())
+        } else if (strArr[i]===' ' ){
+            capArr.push(strArr[i]);
+            capNext = true;
+        } else if (capNext===true) {
+            capArr.push(strArr[i].toUpperCase());
+            capNext = false;
+        } else {
+            capArr.push(strArr[i]);
+        }
+
+    }
+    let string = capArr.join('');
+  // code goes here  
+  return string; 
+         
+}
+```
