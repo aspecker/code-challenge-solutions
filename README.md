@@ -31,14 +31,11 @@ function LetterChanges(str) {
         } 
         else{
             return char;
-        }
-                
+        }         
     });
     let returnArr = capArr.map(char=>String.fromCharCode(char));
     let string = returnArr.join('');
-  // code goes here  
-  return string; 
-         
+  return string;       
 }
 ```
 
@@ -60,11 +57,8 @@ function LetterCapitalize(str) {
         } else {
             capArr.push(strArr[i]);
         }
-
     }
     let string = capArr.join('');
-  // code goes here  
-  return string; 
-         
+  return string;         
 }
 ```
