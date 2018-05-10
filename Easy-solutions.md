@@ -62,3 +62,13 @@ function LetterCapitalize(str) {
   return string;         
 }
 ```
+
+### Convert a number into hours:minutes format
+```
+function TimeConvert(num) { 
+    let hours = Math.floor(num/60);
+    let minutes = num%60;
+    return `${hours}:${minutes}`
+         
+}
+```
