@@ -2,6 +2,7 @@
 
 ## Sort an array of students into randomly assigned teams of two
 ```
+// remove a random student from array and return an array with the updated student array and the removed student
 const removeOne = (array)=>{
     let rando = Math.floor(Math.random()*(array.length));
     let removee = array[rando];
