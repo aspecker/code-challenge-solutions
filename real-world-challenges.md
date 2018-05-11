@@ -2,7 +2,6 @@
 
 ## Sort an array of students into randomly assigned teams of two
 ```
-// remove a random student from array and return an array with the updated student array and the removed student
 const removeOne = (array)=>{
     let rando = Math.floor(Math.random()*(array.length));
     let removee = array[rando];
@@ -11,16 +10,14 @@ const removeOne = (array)=>{
 }  
 
 const teamBuilder = students =>{
-    let oddball="";
+    let oddball;
     let teams = [];
-    let isOdd = false;
 
     // if count is uneven, remove one student from array and make them the oddball
     if (students.length%2===1){
         let arr = removeOne(students);
         oddball = arr[0];
         students = arr[1];
-        isOdd = true;
     }
 
     // while any students remain, remove them from students array and sort into arrays of two
@@ -31,21 +28,24 @@ const teamBuilder = students =>{
         if (teams[0]===undefined){
             teams=[[removee]];
         } else if (teams[teams.length-1][0]===undefined) {
-            teams = [...teams,removee];
+            teams = [...teams,[removee]];
         } else if (teams[teams.length-1][1]===undefined){
             teams=teams.concat([teams[teams.length-1].concat([removee])]);
+            // teams = teams.slice(0,teams.length-2).concat([teams[teams.length-1].push(removee)]);
         } else {
             teams=[...teams,[removee]]
         }
     }
+
     // solve why single arrays were present
     // until then, filter arrays with only one student, leaving teams of two
     teams = teams.filter(arr=>arr.length>1);
-    
+
     // if an oddball was generated, push it into a random team of two
-    if (isOdd){
+    if (oddball){
         teams[Math.floor(Math.random()*(teams.length))].push(oddball);
     }
+
     return teams;
 }
 console.log(teamBuilder(students));
