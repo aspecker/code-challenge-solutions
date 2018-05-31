@@ -54,3 +54,16 @@ function knapsackLight(value1, weight1, value2, weight2, maxW) {
     }
 }
 ```
+### given integers a and b, calculate if `while a is not equal to b, increase a by 1 ,decrease b by 1` is an infinite loop
+```
+function isInfiniteProcess(a, b) {
+    if (a>b){
+        return true;
+    }
+    else if ((a%2===0&&b%2===0)||(a%2===1&&b%2===1)){
+        return false;
+    } else {
+        return true;
+    }
+}
+```
