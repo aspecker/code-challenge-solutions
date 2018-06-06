@@ -1,6 +1,25 @@
 # Solutions to Codefights.com challenges
 ## Adam Specker
 
+### given an array of four non-negative ints less than 256, pack these numbers into one number based on an 8 bit binary representation
+### For a = [24, 85, 0], the output should be arrayPacking(a) = 21784.
+### An array [24, 85, 0] looks like [00011000, 01010101, 00000000] in binary. After packing these into one number we get 00000000 01010101 00011000 (spaces are placed for convenience), which equals to 21784.
+```
+function arrayPacking(a) {
+    let numStr='';
+    for (let i=0;i<a.length;i++){
+        let bit = a[i].toString(2);
+        if (bit.length<8){
+            for (let j=bit.length;j<8;j++){
+                bit = "0".concat(bit);
+            }
+        }
+        numStr =bit.concat(numStr);
+    }
+    return parseInt(numStr,2)
+}
+```
+
 ### determine how much call time a user can have based on rates of first minute, minutes 2-10, and minutes 11+ with a fixed amount of money s
 ```
 function phoneCall(min1, min2_10, min11, s) {
