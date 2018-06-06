@@ -1,6 +1,19 @@
 # Solutions to Codefights.com challenges
 ## Adam Specker
 
+### Determine the smallest factorial that is greater than or equal to integer n
+```
+function leastFactorial(n) {
+    let product = 1;
+    for (let i=1; i<=n;i++){
+        product = product*i
+        if (product>=n){
+            return product;
+        } 
+    }
+}
+```
+
 ### given an array of four non-negative ints less than 256, pack these numbers into one number based on an 8 bit binary representation
 ### For a = [24, 85, 0], the output should be arrayPacking(a) = 21784.
 ### An array [24, 85, 0] looks like [00011000, 01010101, 00000000] in binary. After packing these into one number we get 00000000 01010101 00011000 (spaces are placed for convenience), which equals to 21784.
