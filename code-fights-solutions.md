@@ -1,6 +1,18 @@
 # Solutions to Codefights.com challenges
 ## Adam Specker
 
+### Given l<=a<=b<=r, find the number of ways that a + b can equal n
+```
+function countSumOfTwoRepresentations2(n, l, r) {
+    let ways = 0;
+    for (let i = l; i <= r; i ++){
+        let b = n - i;
+        if (b>=1&&b<=r&&b>=)
+    }
+    return ways;
+}
+```
+
 ### Determine the smallest factorial that is greater than or equal to integer n
 ```
 function leastFactorial(n) {
