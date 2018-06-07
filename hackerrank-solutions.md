@@ -1,5 +1,29 @@
 # Hackerrank Solutions
 
+### Given a time in HH:MM:SS:AM or HH:MM:SS:PM, convert to 24 hour time in HH:MM:SS format
+```
+function timeConversion(s) {
+    let hours = s.substring(0,2);
+    let milStr = ''
+    if (s.includes('PM')){
+        let milHours = parseInt(hours)+12;
+        milStr = milHours.toString()
+        if (hours==='12'){
+            milStr='12'
+        }
+        return milStr + s.substring(2,8);
+    }  
+    if (s.includes('AM')){
+        if (hours==='12'){
+            milStr = '00';
+        } else {
+            milStr = hours;
+        }
+        return milStr + s.substring(2,8);
+    }
+}
+```
+
 ### Given an array of numbers, find the number of occurances of the largest number
 ```
 function birthdayCakeCandles(ar) {
