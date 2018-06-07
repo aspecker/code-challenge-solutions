@@ -1,5 +1,24 @@
 # Hackerrank Solutions
 
+### Given an array of numbers, find the number of occurances of the largest number
+```
+function birthdayCakeCandles(ar) {
+    let maxHeight = 0;
+    let counter = 0;
+    for (let i=0;i<ar.length;i++){
+        if (ar[i]>maxHeight){
+            maxHeight = ar[i]
+        }
+    }
+    ar.map(x=>{
+        if (x===maxHeight){
+            counter++;
+        }
+    })
+    return counter;
+}
+```
+
 ### Given an array of five numbers, find the smallest and largest sum of any of the four numbers
 ```
 function miniMaxSum(arr) {
