@@ -1,5 +1,18 @@
 # Hackerrank Solutions
 
+### Given a square matrix, calculated the difference between the sums of both diagonals
+```
+function diagonalDifference(a) {
+    let sum1 = 0;
+    let sum2 = 0;
+    for (let i =0; i<a.length;i++){
+        sum1 += a[i][i]
+        sum2 +=a[i][a.length-1-i]
+    }
+    return Math.abs(sum1-sum2)
+}
+```
+
 ### Given a time in HH:MM:SS:AM or HH:MM:SS:PM, convert to 24 hour time in HH:MM:SS format
 ```
 function timeConversion(s) {
