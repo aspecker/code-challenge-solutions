@@ -1,5 +1,22 @@
 # Hackerrank Solutions
 
+### If grade is less than 3 away from the next multiple of 5 and greater than 38, round up. Otherwise, return original score
+```
+function gradingStudents(grades) {
+    return grades.map(x=>{
+        let rounder = (Math.ceil(x/5))*5;
+        console.log(rounder);
+        if (x<38){
+            return x;
+        } else if (rounder-x<3){
+            return rounder;
+        } else {
+            return x;
+        }
+    })
+}
+```
+
 ### Given a square matrix, calculated the difference between the sums of both diagonals
 ```
 function diagonalDifference(a) {
